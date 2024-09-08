@@ -70,11 +70,15 @@ spec:
                 configMapKeyRef:
                   key: SECRET_KEY
                   name: backend-env
-          image: ghcr.io/saleor/saleor:3.20
+          image: chimi21366372/saleor-api:non-root
           name: api
           ports:
             - containerPort: 8000
               protocol: TCP
+          resources:
+            limits:
+              cpu: "1"
+              memory: "536870912"
           stdin: true
           tty: true
           volumeMounts:

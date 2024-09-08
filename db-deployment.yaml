@@ -26,8 +26,6 @@ spec:
         - env:
             - name: POSTGRES_PASSWORD
               value: saleor
-            - name: PGDATA
-              value: var/lib/postgresql/data/pgdata
             - name: POSTGRES_USER
               value: saleor
           image: library/postgres:15-alpine
@@ -35,6 +33,10 @@ spec:
           ports:
             - containerPort: 5432
               protocol: TCP
+          resources:
+            limits:
+              cpu: "1"
+              memory: "268435456"
           volumeMounts:
             - mountPath: /var/lib/postgresql/data
               name: saleor-db

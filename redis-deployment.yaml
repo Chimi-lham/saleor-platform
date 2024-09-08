@@ -28,6 +28,10 @@ spec:
           ports:
             - containerPort: 6379
               protocol: TCP
+          resources:
+            limits:
+              cpu: 500m
+              memory: "134217728"
           volumeMounts:
             - mountPath: /data
               name: saleor-redis

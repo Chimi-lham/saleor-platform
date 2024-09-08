@@ -40,6 +40,10 @@ spec:
               protocol: TCP
             - containerPort: 9411
               protocol: TCP
+          resources:
+            limits:
+              cpu: 200m
+              memory: "134217728"
           volumeMounts:
             - mountPath: /tmp
               name: jaeger-claim0

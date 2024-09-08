@@ -74,6 +74,10 @@ spec:
                   name: backend-env
           image: ghcr.io/saleor/saleor:3.20
           name: worker
+          resources:
+            limits:
+              cpu: "1"
+              memory: "536870912"
           volumeMounts:
             - mountPath: /app/media
               name: saleor-media

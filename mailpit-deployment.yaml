@@ -28,4 +28,8 @@ spec:
               protocol: TCP
             - containerPort: 8025
               protocol: TCP
+          resources:
+            limits:
+              cpu: 100m
+              memory: "67108864"
       restartPolicy: Always
